@@ -17,8 +17,8 @@
 
 FROM ubuntu:20.04
 
-RUN adduser --system --group --no-create-home appuser && \
-    usermod -aG sudo appuser
+RUN adduser appuser3 && \
+    usermod -aG sudo appuser2
 
 # MAINTAINER Teaclave Contributors <dev@teaclave.apache.org>
 # EDITION Antonio Joia Neto <aj4775@rit.edu>
@@ -86,7 +86,8 @@ RUN apt-get update && \
     pip \
     ca-certificates
 
-RUN pip install cryptography
+RUN pip3 install cryptography && \
+    pip3 install pyelftools
 
 RUN apt-get install -y software-properties-common && \
     add-apt-repository ppa:linuxuprising/libpng12 && \

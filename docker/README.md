@@ -22,3 +22,12 @@ docker container create -it --name qemu-armv8 emulator/qemu:armv8
 ```
 docker container start --attach -i qemu-armv8
 ```
+
+
+
+/home/optee-project/optee_os
+
+
+make CROSS_COMPILE=arm-linux-gnueabihf- PLATFORM=vexpress-qemu_virt TA_DEV_KIT_DIR=/home/optee-project/optee_os/out/arm/export-ta_arm32
+
+make  CROSS_COMPILE=arm-linux-gnueabihf-  TEEC_EXPORT=/home/optee-project/optee_client/out/export/usr --no-builtin-variables
